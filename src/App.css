@@ -1,38 +1,120 @@
-.App {
-  text-align: center;
+
+:root{
+  --amarillo: #FFE800;
+  --celeste:rgb(76, 176, 243)
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/*--------------------------------------INTROANIMACION*/
+@keyframes fondo {
+  0% {
+    /* transform: translateY(0); */
+    opacity: 1;
+  }
+  50%{
+    opacity: 0;
+     
+  }
+  100%{
+    transform: translateX(150%); 
+    
+  }
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@keyframes titulo {
+  from {   
+    transform: translateX(-100%);
+  }
+  to{   
+    transform: translateX(160%);  
+    
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#fondoAnimacion {
+  background-color:var(--celeste);
+  height: 100vh;
+  position:absolute;
+  z-index: 2;
+  top: 0;
+  width: 100%;
+  animation: fondo 1.5s;
+  animation-timing-function: linear;
+  animation-delay: 1.5s;
+  animation-fill-mode: forwards;
+}
+
+#h1Animado {  
+  z-index: 3;
+  padding: 0 1rem;
+  font-size: 13rem; 
+  position:absolute;
+  top: 30%;
+  font-family: 'Permanent Marker', cursive;
+  color:var(--amarillo);
+  transform: translateX(-100%); 
+  animation: titulo 3s;
+  animation-timing-function: linear;
+  /* -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #ff00ae; */
+}
+
+/*---------------------------------------GENERALES*/
+*{
+  margin-block-start: 0;
+  margin-block-end: 0;
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+}
+
+body{
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+}
+/*-------------------------------------------HEADER*/
+
+header{
+  height: 100vh;
+  background: no-repeat center/cover url("http://images.ctfassets.net/vnxry7jc7f2k/5RpJJJgujK6rFOlN0ljzi7/06352b48f4acafa52500299cb6475299/leggera_SLIDER_MOOD.jpg?w=1200&q=80");
+  color:var(--amarillo);  
+}
+
+/*--------------------------------------------NAVBAR*/
+nav{
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;   
+  padding: 1rem 2rem;
 }
-
-.App-link {
-  color: #61dafb;
+.marca{
+  font-family: 'Permanent Marker', cursive;
+  font-size: 2rem;  
+  font-weight: 900;
+  cursor: pointer;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.shop-about{ 
+  background-color: var(--amarillo);
+  color:black;
+  cursor: pointer;
+}
+.shop-about span{
+  display: inline-block;
+  padding: 0.5rem;
+  font-weight: 600;
+}
+.shop-about span:hover{
+  background:black;
+  color:var(--amarillo)
+}
+.icon-user{
+  display: inline-block;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background-color: black;
+}
+/*---------------------------------------MEDIAQUERIES*/
+@media (min-width:1000px){
+  #h1Animado{   
+    animation: titulo 2.5s;
+    animation-timing-function: linear;
   }
 }
