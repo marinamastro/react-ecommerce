@@ -28,7 +28,14 @@
     
   }
 }
-
+@keyframes translate{
+0% {
+  transform: translate3d(0px, 0px, 0px);
+}
+100% {
+  transform: translate3d(-50%, 0px, 0px);
+}
+}
 #fondoAnimacion {
   background-color:var(--celeste);
   height: 100vh;
@@ -47,7 +54,7 @@
   padding: 0 1rem;
   font-size: 13rem; 
   position:absolute;
-  top: 30%;
+  top: 25%;
   font-family: 'Permanent Marker', cursive;
   color:var(--amarillo);
   transform: translateX(-100%); 
@@ -67,7 +74,7 @@
 
 body{
   margin: 0;
-  overflow: hidden;
+  overflow-x: hidden;
   position: relative;
 }
 /*-------------------------------------------HEADER*/
@@ -76,14 +83,18 @@ header{
   height: 100vh;
   background: no-repeat center/cover url("http://images.ctfassets.net/vnxry7jc7f2k/5RpJJJgujK6rFOlN0ljzi7/06352b48f4acafa52500299cb6475299/leggera_SLIDER_MOOD.jpg?w=1200&q=80");
   color:var(--amarillo);  
+  position: relative;
 }
 
-/*--------------------------------------------NAVBAR*/
+/*--------------------------------------NAVBAR*/
 nav{
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;   
   padding: 1rem 2rem;
+  position: fixed;
+  top: 0;
 }
 .marca{
   font-family: 'Permanent Marker', cursive;
@@ -98,18 +109,39 @@ nav{
 }
 .shop-about span{
   display: inline-block;
-  padding: 0.5rem;
+  font-size: 0.85rem;
+  padding: 0.5rem 0.8rem;
   font-weight: 600;
 }
 .shop-about span:hover{
   background:black;
   color:var(--amarillo)
 }
-.icon-user{
+.icon{
   display: inline-block;
-  padding: 0.5rem;
+  padding: 0.5em;
   border-radius: 50%;
-  background-color: black;
+  background-color: black; 
+}
+.icon svg{
+  width: 1.5em;
+  height: 1.5em;
+}
+/*----------------------------PROMO*/
+.promo{
+animation-name: translate;
+animation-duration: 12.5s;
+animation-timing-function: linear;
+animation-delay: 0s;
+animation-iteration-count: infinite;
+animation-direction: normal;
+animation-fill-mode: none;
+animation-play-state: running;
+color:black;  
+font-weight: 600;
+display: flex;
+width: 1550px;
+font-weight: 600;
 }
 /*---------------------------------------MEDIAQUERIES*/
 @media (min-width:1000px){

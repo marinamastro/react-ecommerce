@@ -1,5 +1,6 @@
 import React from "react";
-import {BiUser} from "react-icons/bi"
+import {BiUser} from "react-icons/bi";
+import CartWidget from "./CartWidget"
 
 function NavBar (){
     return (
@@ -10,8 +11,8 @@ function NavBar (){
                 <span>ABOUT</span>
             </div>
             <div>
-                <span>CARRITO</span>
-                <span className="icon-user"><BiUser/></span>                
+                <CartWidget/>
+                <span className="icon"><BiUser/></span>                
             </div>
         </nav>
     )
