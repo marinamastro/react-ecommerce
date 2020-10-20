@@ -1,4 +1,4 @@
-import React from "react"
+import React,{useRef} from "react"
 import NavBar from "./NavBar"
 
 function Header() {
@@ -10,6 +10,7 @@ function Header() {
         right:"2%",
         overflow:"hidden"
     }
+    const newsletter = useRef(null);
     return (
         <header>
             <NavBar/>
@@ -20,6 +21,16 @@ function Header() {
                     <span><pre>· ENVÍO GRATIS A PARTIR DE $500 </pre></span> 
                     <span><pre>· 10% DE DESCUENTO INCRIBIÉNDOTE A NUESTRO NEWSLETTER </pre></span>  
                 </p> 
+            </div>
+            <div className="newsletter" ref={newsletter}>
+                <button className="x" onClick={()=>newsletter.current.classList.add("hide")}>x</button>
+                <p>10% DE DESCUENTO EN TU PRIMER PEDIDO</p>
+                <form>
+                <input type="email" placeholder="Email"/>
+                <button>OK</button>
+                </form>
+                
+
             </div>
         </header>
     )
