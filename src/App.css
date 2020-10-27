@@ -194,6 +194,16 @@ nav{
   height: 1.5em;
 }
 /*--------------------------------------------ITEM*/
+.item{
+  width:30%;
+  height:370px;
+  text-align:center;
+  padding:1.5rem 0;
+  margin:0.5rem;
+  background:#f7f5f5;
+  position:relative;
+  overflow: hidden;
+}
 .price{
   background-color: var(--amarillo);
   transform:rotate(7deg);
@@ -208,12 +218,25 @@ nav{
 }
 .item-img{
   transition: all 0.4s;
+  z-index: 2;
+  position: relative;
 }
-.item-img:hover{
+.item:hover .item-img{
   transform:rotate(10deg);
-  transition: all 0.4s;
+  transition: all 0.2s;
 }
-
+.animacion-item{
+  position:absolute;
+  top:30%; 
+  font-size: 5rem;
+  font-family: 'Permanent Marker', cursive;
+  color:var(--amarillo); 
+  transform: translateX(-100%);  
+}
+.item:hover .animacion-item{
+  transform: translateX(100%);  
+  transition: all linear 1.5s;
+}
 /*---------------------------------------MEDIAQUERIES*/
 @media (min-width:1000px){
   #h1Animado{   
