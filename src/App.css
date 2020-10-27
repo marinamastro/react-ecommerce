@@ -158,6 +158,7 @@ nav{
   padding: 1rem 2rem;
   position: fixed;
   top: 0;
+  z-index: 3;
 }
 .marca{
   font-family: 'Permanent Marker', cursive;
@@ -169,12 +170,14 @@ nav{
   background-color: var(--amarillo);
   color:black;
   cursor: pointer;
+ 
 }
 .shop-about span{
   display: inline-block;
   font-size: 0.85rem;
   padding: 0.5rem 0.8rem;
   font-weight: 600;
+
 }
 .shop-about span:hover{
   background:black;
@@ -190,7 +193,26 @@ nav{
   width: 1.5em;
   height: 1.5em;
 }
-
+/*--------------------------------------------ITEM*/
+.price{
+  background-color: var(--amarillo);
+  transform:rotate(7deg);
+}
+.add-to-cart{
+  padding: 0.5em 1rem;
+  background-color: black; 
+  border:none;
+  color:white;
+  margin-top: 1rem;
+  cursor:pointer;  
+}
+.item-img{
+  transition: all 0.4s;
+}
+.item-img:hover{
+  transform:rotate(10deg);
+  transition: all 0.4s;
+}
 
 /*---------------------------------------MEDIAQUERIES*/
 @media (min-width:1000px){
