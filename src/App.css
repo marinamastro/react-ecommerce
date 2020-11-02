@@ -106,6 +106,7 @@ header{
   font-weight: 600;
   }
 
+
   .newsletter{ 
     position: relative;
     text-align: center;  
@@ -236,6 +237,32 @@ nav{
 .item:hover .animacion-item{
   transform: translateX(100%);  
   transition: all linear 1.5s;
+}
+
+/*-------------------------------------------------CONTADOR*/
+.item-count {
+  display:flex;
+  margin-top:2rem
+}
+
+.item-count button {
+  cursor: pointer;
+}
+.contador{
+  border:2px solid black;
+  padding: 1rem 0.5rem;
+}
+.contador button {
+  border:none;
+  background-color: transparent;
+  font-size: 1rem;
+}
+.agregar button {
+  padding: 1.3rem 0.5rem;
+  background-color: var(--amarillo);
+  border:none;
+  margin-left: 1rem;
+  font-weight: 600;
 }
 /*---------------------------------------MEDIAQUERIES*/
 @media (min-width:1000px){

@@ -1,6 +1,6 @@
 import React, {useState,useEffect} from "react"
-import ItemCount from "./ItemCount"
 import ItemList from "./ItemList"
+import ItemDetailContainer from "./ItemDetailContainer"
 
 function ItemListContainer ({titulo}){
     const style={
@@ -22,16 +22,13 @@ function ItemListContainer ({titulo}){
         }
     }, [])
   
-    
 
-    function onAdd (count) {
-        alert(`se agregaron ${count} items al carrito`)
-    }
     return (
         <main>
             <h2 style={style}>{titulo}</h2>
             {/* <ItemCount stock="4" initial="1" onAdd={onAdd} /> */}
             <ItemList productos = {productos} />
+            <ItemDetailContainer/>
         </main>
     )
 }
