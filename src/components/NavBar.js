@@ -1,14 +1,18 @@
-import React from "react";
-import {BiUser} from "react-icons/bi";
+import React from "react"
+import {BiUser} from "react-icons/bi"
 import CartWidget from "./CartWidget"
+import {Link} from "react-router-dom"
 
 function NavBar (){
     return (
         <nav>
-            <h1 className="marca">SUPERFLUID</h1>
-            <div className="shop-about">
-                <span>SHOP</span>
-                <span>ABOUT</span>
+            <Link to="/" style={{textDecoration:"none",color:"inherit"}}>
+                <h1 className="marca">SUPERFLUID</h1>
+            </Link>
+            <div className="categorias">
+                <span>LIPS</span>
+                <span>EYES</span>
+                <span>FACE</span>
             </div>
             <div>
                 <CartWidget/>

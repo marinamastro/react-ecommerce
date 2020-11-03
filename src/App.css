@@ -81,6 +81,10 @@ body{
 .hide{
   display: none;
 }
+
+.margin-end{
+  margin-block-end: 1rem;
+}
 /*-------------------------------------------HEADER*/
 
 header{
@@ -160,6 +164,7 @@ nav{
   position: fixed;
   top: 0;
   z-index: 3;
+  color:var(--amarillo)
 }
 .marca{
   font-family: 'Permanent Marker', cursive;
@@ -167,20 +172,20 @@ nav{
   font-weight: 900;
   cursor: pointer;
 }
-.shop-about{ 
+.categorias{ 
   background-color: var(--amarillo);
   color:black;
   cursor: pointer;
  
 }
-.shop-about span{
+.categorias span{
   display: inline-block;
   font-size: 0.85rem;
   padding: 0.5rem 0.8rem;
   font-weight: 600;
 
 }
-.shop-about span:hover{
+.categorias span:hover{
   background:black;
   color:var(--amarillo)
 }
@@ -195,6 +200,13 @@ nav{
   height: 1.5em;
 }
 /*--------------------------------------------ITEM*/
+.title-item-container{
+  text-align:center;
+  font-weight:600;
+  font-size:3rem;
+  margin:3rem 0
+}
+
 .item{
   width:30%;
   height:370px;
@@ -239,6 +251,14 @@ nav{
   transition: all linear 1.5s;
 }
 
+.detail-container{
+  margin-top:3rem;
+  display:grid;
+  grid-template-columns:40% 40%;
+  grid-template-rows:auto;
+  justify-items:center;
+  align-items:center
+}
 /*-------------------------------------------------CONTADOR*/
 .item-count {
   display:flex;

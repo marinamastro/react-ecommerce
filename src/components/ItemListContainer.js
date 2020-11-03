@@ -1,14 +1,8 @@
 import React, {useState,useEffect} from "react"
 import ItemList from "./ItemList"
-import ItemDetailContainer from "./ItemDetailContainer"
+
 
 function ItemListContainer ({titulo}){
-    const style={
-        textAlign:"center",
-        fontWeight:"600",
-        fontSize:"3rem",
-        margin:"3rem 0",        
-    }
     const [productos,setProductos] = useState();
     useEffect(() => {
         const promise = new Promise ((resolve,reject)=>{
@@ -25,10 +19,8 @@ function ItemListContainer ({titulo}){
 
     return (
         <main>
-            <h2 style={style}>{titulo}</h2>
-            {/* <ItemCount stock="4" initial="1" onAdd={onAdd} /> */}
-            <ItemList productos = {productos} />
-            <ItemDetailContainer/>
+            <h2 className="title-item-container">{titulo}</h2>          
+            <ItemList productos = {productos} />           
         </main>
     )
 }
