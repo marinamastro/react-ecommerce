@@ -1,12 +1,14 @@
-import React from "react"
+import React, { useState } from "react"
 import ItemCount from "./ItemCount"
 import Promo from "./Promo"
 import IconosDetail from "./IconosDetail"
+import {Link} from "react-router-dom"
 
 function ItemDetail ({producto}) {
-    
+    const [items,setItems] = useState()
+
     function onAdd (count) {
-        alert(`se agregaron ${count} items al carrito`)
+        setItems(count)
     }
 
    return !producto ? <h1 style={{marginTop:"10%",textAlign:"center"}}>Loading</h1> :  producto&&producto.map(x=>{
@@ -21,7 +23,10 @@ function ItemDetail ({producto}) {
                         No por ser creídos pero…pero algunos lo llaman el salva vidas!
                     </p>
                   <div style={{position:"relative",width:"60%"}}>
-                    <ItemCount stock={4} initial={1} onAdd={onAdd} price={x.price}/>                  
+                    {!items ? <ItemCount stock={4} initial={1} onAdd={onAdd} price={x.price}/> : 
+                    <div className="agregar">
+                        <Link to="/cart"><button style={{marginLeft:0}}>Terminar compra</button></Link>
+                    </div> }                 
                     <IconosDetail/>                    
                     <Promo style={{fontSize:"0.8rem",background:"yellow",width:"90%",position:"absolute", bottom:"-33px", overflow:"hidden"}}/> 
                   </div>

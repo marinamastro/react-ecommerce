@@ -85,6 +85,9 @@ body{
 .margin-end{
   margin-block-end: 1rem;
 }
+button{
+  cursor: pointer;
+}
 /*-------------------------------------------HEADER*/
 
 header{

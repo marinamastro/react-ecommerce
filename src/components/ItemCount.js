@@ -9,7 +9,7 @@ function ItemCount ({stock,initial,onAdd,price}) {
     return (
         <div className="item-count">
             <div className="contador">
-                <button onClick={()=>{ if(count>0) quitar()}}> - </button>           
+                <button onClick={()=>{ if(count>1) quitar()}}> - </button>           
                 <span style={{padding:"1rem"}}>{count}</span>
                 <button onClick={()=>{ if(stock>count) agregar()}}> + </button>
             </div>            
