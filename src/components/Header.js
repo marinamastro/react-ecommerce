@@ -1,7 +1,7 @@
 import React, {useState} from "react"
 import Newsletter from "./Newsletter"
 import Promo from "./Promo"
-import "../css/header.css"
+
 
 function Header() {   
     const [close,setCloseNewsletter] = useState(false)

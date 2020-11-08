@@ -1,5 +1,9 @@
 import React from 'react'
-import './App.css'
+import './css/App.css'
+import "./css/Header.css"
+import "./css/Item.css"
+import "./css/ItemCount.css"
+import "./css/Navbar.css"
 import Header from "./components/Header"
 import NavBar from "./components/NavBar"
 import ItemListContainer from "./components/ItemListContainer"
