@@ -2,7 +2,6 @@ import React from 'react'
 import './App.css'
 import Header from "./components/Header"
 import NavBar from "./components/NavBar"
-import AnimacionIntro from "./components/AnimacionIntro"
 import ItemListContainer from "./components/ItemListContainer"
 import {BrowserRouter,Switch,Route} from "react-router-dom"
 import ItemDetailContainer from './components/ItemDetailContainer'
@@ -14,8 +13,7 @@ function App() {
     <BrowserRouter>    
       <NavBar/>
       <Switch>
-        <Route exact path="/">
-          {/* <AnimacionIntro/> */}
+        <Route exact path="/">        
           <Header/>
           <ItemListContainer titulo="TUS NUEVOS BÁSICOS!"/> 
         </Route>      

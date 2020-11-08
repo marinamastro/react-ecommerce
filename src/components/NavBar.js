@@ -2,6 +2,7 @@ import React from "react"
 import {BiUser} from "react-icons/bi"
 import CartWidget from "./CartWidget"
 import {Link} from "react-router-dom"
+import  "../css/navbar.css"
 
 function NavBar (){
     return (
