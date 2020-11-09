@@ -1,0 +1,36 @@
+footer{   
+    margin:4rem 0
+}
+footer div.container-sup{
+    display:flex;
+    justify-content:space-around;
+}
+.contacto {
+ width:40%;
+ display:flex;
+ justify-content:flex-end;
+ font-size: 0.9rem;
+}
+.contacto div{
+    margin: 0 1rem;
+}
+.contacto div p{
+    margin: 0.5rem 0;
+}
+.footer-newsletter{
+    width: 40%;
+}
+.footer-newsletter h3{
+    font-size: 1.7rem;
+    margin-bottom: 1.4rem;
+}
+
+.container-inf{
+    margin-top: 4rem;
+}
+
+.container-inf h4{
+    text-align: center;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 5rem;
+}

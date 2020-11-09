@@ -27,7 +27,7 @@ function ItemDetail ({producto}) {
                     <div className="agregar">
                         <Link to="/cart"><button style={{marginLeft:0}}>Terminar compra</button></Link>
                     </div> }                 
-                    <IconosDetail/>                    
+                    <IconosDetail styles={{display:"flex",justifyContent:"space-around",marginTop:"2rem",width:"90%"}}/>                    
                     <Promo style={{fontSize:"0.8rem",background:"yellow",width:"90%",position:"absolute", bottom:"-33px", overflow:"hidden"}}/> 
                   </div>
                                                           

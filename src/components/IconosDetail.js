@@ -1,9 +1,9 @@
 import React from "react"
 
-function IconosDetail (){
+function IconosDetail ({styles}){
     const style= {height: "2.33vw", width: "auto",margin:"auto",display:"block"}
 return (
-    <div style={{display:"flex",justifyContent:"space-around",marginTop:"2rem",width:"90%"}}>
+    <div style={styles}>
         <div>
             <svg viewBox="0 0 13 20" style={style}>
                 <g>

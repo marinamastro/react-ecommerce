@@ -46,6 +46,7 @@ header{
       border: 2px solid black;
     }
     .newsletter button.x{
+      background-color: transparent;
       border: none;
       position: absolute;
       top: 1%;
@@ -55,14 +56,14 @@ header{
     .newsletter p{
       padding: 1rem ;
     }
-    .newsletter input{
+    .input-newsletter input{
       background-color: transparent;
       border: none;
       color: black;
       border-bottom: 1px solid black;
     }
   
-    .newsletter button{
+    .input-newsletter button{
       background-color: transparent;
       border: none;
       font-weight: 600;
@@ -70,6 +71,6 @@ header{
       border-bottom: 1px solid black;
     }
   
-    .newsletter form{
+    form.input-newsletter{
       display: flex;
     }
