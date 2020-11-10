@@ -5,10 +5,10 @@ import IconosDetail from "./IconosDetail"
 import {Link} from "react-router-dom"
 
 function ItemDetail ({producto}) {
-    const [items,setItems] = useState()
+    const [cantidad,setCantidad] = useState()
 
     function onAdd (count) {
-        setItems(count)
+        setCantidad(count)       
     }
 
    return !producto ? <h1 style={{marginTop:"10%",textAlign:"center"}}>Loading</h1> :  producto&&producto.map(x=>{
@@ -23,7 +23,7 @@ function ItemDetail ({producto}) {
                         No por ser creídos pero…pero algunos lo llaman el salva vidas!
                     </p>
                   <div style={{position:"relative",width:"60%"}}>
-                    {!items ? <ItemCount stock={4} initial={1} onAdd={onAdd} price={x.price}/> : 
+                    {!cantidad ? <ItemCount stock={4} initial={1} onAdd={onAdd} item={x}/> : 
                     <div className="agregar">
                         <Link to="/cart"><button style={{marginLeft:0}}>Terminar compra</button></Link>
                     </div> }                 

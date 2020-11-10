@@ -38,6 +38,17 @@ nav{
     padding: 0.5em;
     border-radius: 50%;
     background-color: black; 
+    position: relative;
+  }
+  .cart-length{
+    position: absolute;
+    top: -10px;
+    right: -15px;
+    background-color:var(--amarillo) ;
+    padding: 0.2rem 0.5rem;
+    color:black;
+    border-radius: 50%;
+    font-weight: 600;
   }
   .icon svg{
     width: 1.5em;

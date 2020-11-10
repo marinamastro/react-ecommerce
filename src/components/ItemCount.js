@@ -1,20 +1,22 @@
 import React,{useState} from "react"
+import {useCartContext} from "../context/CartContext"
 
 
-function ItemCount ({stock,initial,onAdd,price}) {
-    const [count,setCount] = useState(initial);
-    const quitar = () =>  setCount(count-1);
-    const agregar = () => setCount(parseInt(count)+1);
+function ItemCount ({stock,initial,onAdd,item}) {
+    const {addItem} = useCartContext();
+    const [cantidad,setCantidad] = useState(initial);
+    const quitar = () =>  setCantidad(cantidad-1);
+    const agregar = () => setCantidad(parseInt(cantidad)+1);
 
     return (
         <div className="item-count">
             <div className="contador">
-                <button onClick={()=>{ if(count>1) quitar()}}> - </button>           
-                <span style={{padding:"1rem"}}>{count}</span>
-                <button onClick={()=>{ if(stock>count) agregar()}}> + </button>
+                <button onClick={()=>{ if(cantidad>1) quitar()}}> - </button>           
+                <span style={{padding:"1rem"}}>{cantidad}</span>
+                <button onClick={()=>{ if(stock>cantidad) agregar()}}> + </button>
             </div>            
             <div className="agregar">
-                <button onClick={()=>onAdd(count)}>${price*count} - Agregar al carrito</button>
+                <button onClick={()=>{onAdd(cantidad);addItem({item,cantidad})}}>${item.price*cantidad} - Agregar al carrito</button>
             </div>
         </div>
     )

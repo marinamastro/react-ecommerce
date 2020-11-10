@@ -12,10 +12,12 @@ import {BrowserRouter,Switch,Route} from "react-router-dom"
 import ItemDetailContainer from './components/ItemDetailContainer'
 import Cart from "./components/Cart"
 import Footer from "./components/Footer"
+import CartProvider from "./context/CartContext"
 
 
 function App() {
   return (
+  <CartProvider>
     <BrowserRouter>    
       <NavBar/>    
       <Switch>
@@ -32,6 +34,7 @@ function App() {
         </Route>
       </Switch>        
     </BrowserRouter>    
+  </CartProvider>
   );
 }
 
