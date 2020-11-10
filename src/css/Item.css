@@ -27,6 +27,18 @@
     margin-top: 1rem;
     cursor:pointer;  
   }
+
+  .is-in-cart{
+    margin-top: 1rem;
+    cursor: initial;
+    padding: 0.5em 1rem;
+    background-color: var(--amarillo);
+    font-weight: 600;
+    color:black;
+    border:none;
+
+  }
+
   .item-img{
     transition: all 0.4s;
     z-index: 2;

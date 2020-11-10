@@ -2,11 +2,13 @@ import React from "react"
 import {Link} from "react-router-dom"
 import {useCartContext} from "../context/CartContext"
 
-function Item ({producto}) {
+function Item ({producto,isInCart}) {
     const {cart,addItem} = useCartContext();
 
-   
-    
+    function isInCart(producto){       
+        return cart.find(x=>x.item.id===producto.id)  
+    }
+
     return <div className="item">
         <h2 className="animacion-item">SUPERFLUID</h2>
         <Link to={`/items/${producto.id}`}> 
@@ -16,7 +18,13 @@ function Item ({producto}) {
             <h4>{producto.title}</h4>
             <h4 className="price">${producto.price}</h4>
         </div>
-        <button className="add-to-cart" onClick={()=>addItem({item:producto,cantidad:1})}>AGREGAR</button>
+        <button 
+        className={isInCart(producto) ? "is-in-cart" : "add-to-cart"}
+        onClick={()=>addItem({item:producto,cantidad:1})}
+        disabled={ isInCart(producto) ? true : false}
+        >
+           { isInCart(producto) ? "AGREGADO" : "AGREGAR" }
+        </button>
     </div>
 
 }
