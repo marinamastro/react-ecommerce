@@ -13,7 +13,7 @@ function ItemDetail ({producto}) {
 
    return !producto ? <h1 style={{marginTop:"10%",textAlign:"center"}}>Loading</h1> :  producto&&producto.map(x=>{
       return (
-          <div className="detail-container">
+          <div className="detail-container" key={x.id}>
               <img src={x.pictureUrl} alt={x.title} width="40%"/>
               <div>
                   <h1 style={{marginTop:"2rem"}} className="margin-end">{x.title}</h1>
