@@ -1,6 +1,6 @@
 import React, {useState,useEffect} from "react"
 import ItemList from "./ItemList"
-
+import Loading from "./Loading"
 
 function ItemListContainer ({titulo}){
     const [productos,setProductos] = useState();
@@ -20,7 +20,7 @@ function ItemListContainer ({titulo}){
     return (
         <main>
             <h2 className="title-item-container">{titulo}</h2>          
-            <ItemList productos = {productos} />           
+            {productos ? <ItemList productos = {productos} /> : <Loading/>}           
         </main>
     )
 }
