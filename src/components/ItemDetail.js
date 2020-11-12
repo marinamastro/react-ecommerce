@@ -3,6 +3,7 @@ import ItemCount from "./ItemCount"
 import Promo from "./Promo"
 import IconosDetail from "./IconosDetail"
 import {Link} from "react-router-dom"
+import Loading from "./Loading"
 
 function ItemDetail ({producto}) {
     const [cantidad,setCantidad] = useState()
@@ -11,7 +12,7 @@ function ItemDetail ({producto}) {
         setCantidad(count)       
     }
 
-   return !producto ? <h1 style={{marginTop:"10%",textAlign:"center"}}>Loading</h1> :  producto&&producto.map(x=>{
+   return !producto ? <Loading/> :  producto&&producto.map(x=>{
       return (
           <div className="detail-container" key={x.id}>
               <img src={x.pictureUrl} alt={x.title} width="40%"/>
