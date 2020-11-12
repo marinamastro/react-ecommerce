@@ -5,11 +5,20 @@ import {useCartContext} from "../context/CartContext"
 
 function CartWidget() {
     const {cart} = useCartContext();
+
+    function cantidadItems () {
+        let cantidad = 0;
+        cart.forEach(element => {
+            return cantidad+=element.cantidad
+        });       
+        return cantidad
+    }
+
     return (
         <Link to="/cart" style={{color:"inherit"}}>
             <span className="icon" style={{marginRight:"1rem"}}>
                 <FiShoppingCart/>
-                <span className="cart-length">{cart.length}</span>
+                <span className="cart-length">{cantidadItems()}</span>
             </span>
         </Link>
     )

@@ -4,12 +4,12 @@ function Promo ({style={ background:"yellow",width:"30%",position:"absolute", bo
 overflow:"hidden"}}){
      
     return <div style={style}>
-    <p className="promo">
-        <span><pre>ENVIO GRATIS A PARTIR DE $500 </pre></span>                    
-        <span><pre>· 10% DE DESCUENTO INCRIBIÉNDOTE A NUESTRO NEWSLETTER </pre></span>  
-        <span><pre>· ENVÍO GRATIS A PARTIR DE $500 </pre></span> 
-        <span><pre>· 10% DE DESCUENTO INCRIBIÉNDOTE A NUESTRO NEWSLETTER </pre></span>  
-    </p> 
+    <div className="promo">
+        <pre>ENVIO GRATIS A PARTIR DE $500 </pre>                  
+        <pre>· 10% DE DESCUENTO INCRIBIÉNDOTE A NUESTRO NEWSLETTER </pre>  
+        <pre>· ENVÍO GRATIS A PARTIR DE $500 </pre>
+        <pre>· 10% DE DESCUENTO INCRIBIÉNDOTE A NUESTRO NEWSLETTER </pre> 
+    </div> 
 </div>
 } 
 

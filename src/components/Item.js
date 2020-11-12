@@ -2,7 +2,7 @@ import React from "react"
 import {Link} from "react-router-dom"
 import {useCartContext} from "../context/CartContext"
 
-function Item ({producto,isInCart}) {
+function Item ({producto}) {
     const {cart,addItem} = useCartContext();
 
     function isInCart(producto){       
