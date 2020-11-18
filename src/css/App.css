@@ -29,12 +29,6 @@ button{
   cursor: pointer;
 }
 /*---------------------------------------MEDIAQUERIES*/
-@media (min-width:1000px){
-  #h1Animado{   
-    animation: titulo 2.5s;
-    animation-timing-function: linear;
-  }
-}
 
 @media (max-width:1066px){
   .newsletter {

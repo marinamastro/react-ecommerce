@@ -10,6 +10,9 @@ nav{
     z-index: 3;
     color:var(--amarillo)
   }
+  nav a{
+  color: black;
+}
   .marca{
     font-family: 'Permanent Marker', cursive;
     font-size: 2rem;  

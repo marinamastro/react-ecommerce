@@ -16,8 +16,7 @@ export default function CartProvider ({children}) {
             cart.splice(index,1,itemActualizado)           
             setCart([...cart])           
         }     
-    }
-    console.log(cart)
+    } 
 
     function removeItem(id){
         setCart([...cart.filter(x=>x.item.id!==id)])        

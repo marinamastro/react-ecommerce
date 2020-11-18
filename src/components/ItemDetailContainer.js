@@ -1,18 +1,23 @@
 import React,{useEffect,useState} from "react"
 import ItemDetail from "./ItemDetail"
+import {getFirestore} from "../firebase"
+import { useParams } from "react-router-dom";
 
 function ItemDetailContainer () {
-    const [producto,setProducto] = useState()
+    const [producto,setProducto] = useState();
+    const {id} = useParams();
+    
     useEffect(() => {
-        const promise = new Promise ((resolve,reject)=>{
-            setTimeout(()=>resolve([{id:1,title:"COOLER EYE GEL",price:199,pictureUrl:"http://images.ctfassets.net/vnxry7jc7f2k/3GJLJl7dD0yzNt0pzFgqzp/904036e327b01591e5b22ca8485c42dc/04_SUPERFLUID_EYEGEL.png?w=300&q=80"}]),2000)
+        const db = getFirestore();
+        const itemCollection = db.collection("items");
+        const item = itemCollection.doc(id);
+        item.get().then(item=>{
+            if(!item.exists){
+                console.log("item no encontrado")
+            }
+            setProducto([{id:item.id, ...item.data()}])
         })
-        promise.then(product =>{
-            setProducto(product)
-        })
-        return () => {
-            setProducto("")
-        }
+        .catch(error=>console.log(error))
     }, [])  
     
     return (

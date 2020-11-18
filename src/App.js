@@ -6,6 +6,7 @@ import "./css/ItemCount.css"
 import "./css/Navbar.css"
 import "./css/Footer.css"
 import "./css/ItemCart.css"
+import "./css/Categoria.css"
 import Header from "./components/Header"
 import NavBar from "./components/NavBar"
 import ItemListContainer from "./components/ItemListContainer"
@@ -14,6 +15,7 @@ import ItemDetailContainer from './components/ItemDetailContainer'
 import Cart from "./components/Cart"
 import Footer from "./components/Footer"
 import CartProvider from "./context/CartContext"
+import Categoria from "./components/Categoria"
 
 
 function App() {
@@ -32,6 +34,9 @@ function App() {
         </Route>
         <Route path="/cart">
           <Cart/>        
+        </Route>
+        <Route exact path="/categoria/:categoryId" >
+          <Categoria/>        
         </Route>
       </Switch>        
     </BrowserRouter>    

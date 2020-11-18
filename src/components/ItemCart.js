@@ -2,10 +2,10 @@ import React from "react"
 import {useCartContext} from "../context/CartContext"
 
 function ItemCart ({item}){
-    const {removeItem} = useCartContext();
+    const {removeItem} = useCartContext();  
     return (
         <div className="item-cart">
-            <img src={item.item.pictureUrl} alt={item.item.title} width="3%" />
+            <img src={window.location.origin+"/img/"+item.item.imageId+".png"} alt={item.item.title} width="3%" />
             <h4>{item.item.title}</h4>
             <p>x {item.cantidad}</p> 
             <p>${item.item.price*item.cantidad}</p>

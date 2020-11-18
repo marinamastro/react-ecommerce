@@ -11,9 +11,9 @@ function NavBar (){
                 <h1 className="marca">SUPERFLUID</h1>
             </Link>
             <div className="categorias">
-                <span>LIPS</span>
-                <span>EYES</span>
-                <span>FACE</span>
+                <Link to="/categoria/lips"><span>LIPS</span></Link>
+                <Link to="/categoria/eyes"><span>EYES</span></Link>
+                <Link to="/categoria/face"><span>FACE</span></Link>
             </div>
             <div>
                 <CartWidget/>

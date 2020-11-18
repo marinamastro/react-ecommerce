@@ -1,0 +1,15 @@
+.categoria-container{
+    margin-top: 4rem;
+    display:flex;
+    flex-flow:row wrap;
+    justify-content:center
+}
+.categoria-container h1{
+    margin: 2rem 3rem;
+    text-transform: uppercase;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    background-color: var(--amarillo);
+    font-family: 'Permanent Marker', cursive;
+    border-bottom: 2px solid black;
+}
