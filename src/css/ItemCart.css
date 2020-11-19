@@ -33,6 +33,7 @@
 .total{
     background-color: black;
     color: var(--amarillo);
+    margin-bottom: 3rem;
 }
 
 .item-cart.total button{
@@ -46,4 +47,8 @@
 .cart-vacio{
     text-align: center;
     font-family: 'Permanent Marker', cursive;
+}
+.item-cart.total button.vaciar{
+    font-size: 0.75rem;
+    margin: 0 
 }

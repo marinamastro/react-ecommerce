@@ -18,7 +18,7 @@ function ItemDetailContainer () {
             setProducto([{id:item.id, ...item.data()}])
         })
         .catch(error=>console.log(error))
-    }, [])  
+    }, [id])  
     
     return (
         <ItemDetail producto = {producto} />

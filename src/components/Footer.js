@@ -3,8 +3,6 @@ import InputNewsletter from "./InputNewsletter"
 import Promo from "./Promo"
 import IconosDetail from "./IconosDetail"
 
-//Sera muy largo este componente?
-
 function Footer () {
     return (
         <>

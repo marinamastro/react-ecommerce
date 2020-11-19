@@ -4,7 +4,7 @@ import ItemCart from "./ItemCart"
 
 
 function CartContainer () {
-    const {cart} = useCartContext();
+    const {cart,clear} = useCartContext();
     let total=0;
     return (<>      
         { cart.map(x=> {
@@ -14,7 +14,10 @@ function CartContainer () {
         <div className="item-cart total">
             <p>TOTAL : ${total}</p>
             {total>500 ? <p className="envio">SI! ENVIO GRATIS</p> : null}
-            <button>COMPRAR</button>           
+            <div>
+                <button className="vaciar" onClick={clear}>VACIAR CARRITO</button>
+                <button>COMPRAR</button> 
+            </div>          
         </div> 
     </>)
 }
