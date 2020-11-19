@@ -6,7 +6,7 @@
 .item-cart{
     background-color: var(--amarillo);
     border-bottom: 2px solid black;
-    padding: 1rem;
+    padding: 0.5rem 1rem;
     display: flex;
     align-items: center;
     font-weight: 600;
