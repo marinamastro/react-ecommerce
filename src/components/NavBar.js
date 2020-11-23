@@ -2,9 +2,23 @@ import React from "react"
 import {BiUser} from "react-icons/bi"
 import CartWidget from "./CartWidget"
 import {Link} from "react-router-dom"
+import {useAuth} from "../context/AuthContext"
+import { Dropdown } from 'react-bootstrap';
 
+function NavBar (){  
+    const {currentUser,logout} = useAuth();
 
-function NavBar (){
+    function primerLetra () {
+       return currentUser.email.charAt(0).toUpperCase()
+    }
+
+    function salir (){
+        logout().then(()=>{
+            alert("Volvé pronto :)")
+        })
+        .catch((e)=>alert(e))
+    }
+
     return (
         <nav>
             <Link to="/" style={{textDecoration:"none",color:"inherit"}}>
@@ -17,7 +31,26 @@ function NavBar (){
             </div>
             <div>
                 <CartWidget/>
-                <span className="icon"><BiUser/></span>                
+                {currentUser ? 
+
+                <Dropdown className="icon">
+                <Dropdown.Toggle variant="success" id="dropdown-basic">
+                    <span className="icon user">
+                        {primerLetra()}
+                    </span>
+                </Dropdown.Toggle>              
+                <Dropdown.Menu>
+                   <p className="email-dropdown-item">{currentUser.email} </p>                           
+                    <Dropdown.Item href="/miPerfil">Mi Perfil</Dropdown.Item>
+                    <p className="dropdown-item "onClick={salir}>Cerrar sesión</p>
+                </Dropdown.Menu>
+              </Dropdown>
+                   
+                : <Link to="/login" style={{color:"inherit"}}>
+                    <span className="icon">
+                       <BiUser/>
+                    </span>
+                </Link>}               
             </div>
         </nav>
     )

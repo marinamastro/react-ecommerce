@@ -1,7 +1,8 @@
 
 :root{
   --amarillo: #FFE800;
-  --celeste:rgb(76, 176, 243)
+  --celeste:rgb(76, 176, 243);
+  --fuente2:'Permanent Marker', cursive;
 } 
 
 /*---------------------------------------GENERALES*/

@@ -1,0 +1,50 @@
+.signContainer{
+    width: 50%;
+    margin: 10% auto;
+    background-color: var(--amarillo);
+    display: flex;   
+    justify-content: center;
+    flex-flow: row wrap;   
+}
+.signContainer h1{
+    width: 100%;
+   margin-left: 1rem;
+   margin-top: 1rem;
+   font-family: var(--fuente2);
+}
+.signContainer form{
+    width: 50%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+
+}
+.signContainer input {     
+    padding: 0.7rem 0.4rem; 
+    margin-bottom: 1rem;
+    background-color: transparent;
+    border: none;
+    color: black;
+    border-bottom: 1px solid black;
+}
+.signContainer button{
+    padding: 1rem 0.4rem;
+    margin-top: 0.5rem;
+    width: 184px;
+    background-color: transparent;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid black;
+  }
+  .error{
+   color: red;
+   font-style: italic;
+   font-weight: 600; 
+  }
+  .crearC{
+    margin-top:1.4rem;
+    font-size: 0.9rem;
+  }

@@ -7,6 +7,7 @@ import "./css/Navbar.css"
 import "./css/Footer.css"
 import "./css/ItemCart.css"
 import "./css/Categoria.css"
+import "./css/SignUp.css"
 import Header from "./components/Header"
 import NavBar from "./components/NavBar"
 import ItemListContainer from "./components/ItemListContainer"
@@ -15,32 +16,43 @@ import ItemDetailContainer from './components/ItemDetailContainer'
 import Cart from "./components/Cart"
 import Footer from "./components/Footer"
 import CartProvider from "./context/CartContext"
+import {AuthProvider} from "./context/AuthContext"
 import Categoria from "./components/Categoria"
+import SignUp from "./components/SignUp"
+import LogIn from "./components/LogIn"
 
 
 function App() {
   return (
-  <CartProvider>
-    <BrowserRouter>    
-      <NavBar/>    
-      <Switch>
-        <Route exact path="/">        
-          <Header/>
-          <ItemListContainer titulo="TUS NUEVOS BÁSICOS!"/> 
-          <Footer/>
-        </Route>      
-        <Route path="/items/:id">
-          <ItemDetailContainer/>        
-        </Route>
-        <Route path="/cart">
-          <Cart/>        
-        </Route>
-        <Route exact path="/categoria/:categoryId" >
-          <Categoria/>        
-        </Route>
-      </Switch>        
-    </BrowserRouter>    
-  </CartProvider>
+  <AuthProvider>
+    <CartProvider>
+      <BrowserRouter>    
+        <NavBar/>    
+        <Switch>
+          <Route exact path="/">        
+            <Header/>
+            <ItemListContainer titulo="TUS NUEVOS BÁSICOS!"/> 
+            <Footer/>
+          </Route>      
+          <Route path="/items/:id">
+            <ItemDetailContainer/>        
+          </Route>
+          <Route path="/cart">
+            <Cart/>        
+          </Route>
+          <Route path="/categoria/:categoryId" >
+            <Categoria/>        
+          </Route>
+          <Route path="/signup" >
+            <SignUp/>        
+          </Route>
+          <Route path="/login" >
+            <LogIn/>        
+          </Route>
+        </Switch>        
+      </BrowserRouter>    
+    </CartProvider>
+  </AuthProvider>
   );
 }
 
