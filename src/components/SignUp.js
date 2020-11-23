@@ -1,7 +1,7 @@
 import React, {useState} from "react"
 import useInput from "./UseInput"
 import {useAuth} from "../context/AuthContext"
-import {Link} from "react-router-dom"
+import {Link,useHistory} from "react-router-dom"
 
 function SignUp () {
     const {signup} = useAuth();
@@ -10,6 +10,21 @@ function SignUp () {
     const passwordConfirmInput = useInput({defaultValue: "",extras: { placeholder: "Repite la Contraseña",type:"password" }});
     const [error,setError] = useState("")
     const [loadding,setLoadding] = useState(false)
+    const history = useHistory();
+
+    function manejoErrores(error){
+        switch (error.code) {
+            case "auth/email-already-in-use":
+                setError("Este correo ya se encuentra en uso")
+                break;
+            case "auth/weak-password":
+                setError("La contraseña debe tener al menos 6 caracteres");
+                break;
+            default:
+                setError(error.message)
+                break;
+        }
+    }
 
     function onSubmit (e){
         e.preventDefault();
@@ -18,10 +33,11 @@ function SignUp () {
         }
         signup(emailInput.value,passwordConfirmInput.value).then((x)=>{
             setLoadding(true);
-            setError("");
-            console.log(x)
+            history.push("/")
+            setError("");            
         })
-        .catch((er)=>setError(er.message))
+        .catch((er)=>{            
+            return manejoErrores(er)})
     }
 
     return (
@@ -32,7 +48,7 @@ function SignUp () {
                 <input {...passwordInput} required/>
                 <input {...passwordConfirmInput} required/>
                 {error&&<p className="error">{error}</p>}
-                <button type="submit" disabled={loadding} >REGISTRARME</button>
+                <button type="submit" disabled={loadding} >REGISTRARME E INICIAR SESIÓN</button>
                 <p className="crearC">Ya tenés una cuenta? <Link to="/login">Ingresá</Link></p>
             </form>           
         </section>

@@ -11,15 +11,29 @@ function LogIn () {
     const [loadding,setLoadding] = useState(false)
     const history = useHistory();
 
+    function manejoErrores(error){
+        switch (error.code) {
+            case "auth/user-not-found":
+                setError("Usuario inexistente")
+                break;
+            case "auth/wrong-password":
+                setError("Contraseña incorrecta")
+            default:
+                setError(error.message)
+                break;
+        }
+    }
+
     function onSubmit (e){
         e.preventDefault();       
         login(emailInput.value,passwordInput.value).then((x)=>{
             setLoadding(true);
             setError("");
-            history.push("/")
-            console.log(x)
+            history.push("/")            
         })
-        .catch((er)=>setError(er.message))
+        .catch((er)=>{            
+            return manejoErrores(er);           
+        })
     }
 
     return (

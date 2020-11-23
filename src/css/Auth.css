@@ -30,9 +30,9 @@
     border-bottom: 1px solid black;
 }
 .signContainer button{
-    padding: 1rem 0.4rem;
+    padding: 1rem 0.2rem;
     margin-top: 0.5rem;
-    width: 184px;
+    width: 245px;
     background-color: transparent;
     border: none;
     font-weight: 600;
@@ -43,6 +43,7 @@
    color: red;
    font-style: italic;
    font-weight: 600; 
+   font-size: 0.85rem;
   }
   .crearC{
     margin-top:1.4rem;
