@@ -36,6 +36,7 @@ function LogIn () {
         })
         .catch((er)=>{  
             console.log(er)          
+            setLoadding(false)
             return manejoErrores(er);           
         })
        

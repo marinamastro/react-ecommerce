@@ -1,11 +1,49 @@
-import React from "react"
+import React,{useState} from "react"
 import {useCartContext} from "../context/CartContext"
 import ItemCart from "./ItemCart"
-
+import useInput from "./UseInput"
+import {useAuth} from "../context/AuthContext"
+import {Link,useHistory} from "react-router-dom"
+import {getFirestore} from "../firebase"
+import * as firebase from "firebase/app"
+import "firebase/firestore"
 
 function CartContainer () {
+    const nombreInput = useInput({defaultValue: "", extras: { placeholder: "Nombre",type:"text"}});
+    const apellidoInput = useInput({defaultValue: "", extras: { placeholder: "Apellido",type:"text"}});
+    const telefonoInput = useInput({defaultValue: "", extras: { placeholder: "Teléfono",type:"text"}});    
     const {cart,clear} = useCartContext();
+    const [comprar,setComprar] = useState(false);
+    const {currentUser} = useAuth();
+    const [loading,setLoading] = useState(false);
+    const history = useHistory();
+
     let total=0;
+
+    function createOrder(e){
+        e.preventDefault();
+        setLoading(true)
+        const newOrder = {
+            buyer: {nombre:nombreInput.value,
+                    apelido:apellidoInput.value,
+                    tel:telefonoInput.value,
+                    email:currentUser.email
+                },
+            items:cart.map(x=>({id:x.item.id,title:x.item.title,price:x.item.price,cantidad:x.cantidad})),
+            total:total,
+            date: firebase.firestore.FieldValue.serverTimestamp()
+        }
+        const db=getFirestore();
+        const orders = db.collection("orders");
+        orders.add(newOrder).then((doc)=>{                    
+            setLoading(false);
+            history.push("/compraexitosa/"+doc.id);
+            setComprar(false)
+        })
+        .catch(er=>alert("error creando order"))
+    }
+
+
     return (<>      
         { cart.map(x=> {
             total+=x.item.price*x.cantidad;
@@ -16,9 +54,25 @@ function CartContainer () {
             {total>500 ? <p className="envio">SI! ENVIO GRATIS</p> : null}
             <div>
                 <button className="vaciar" onClick={clear}>VACIAR CARRITO</button>
-                <button>COMPRAR</button> 
+                <button onClick={()=>setComprar(true)}>COMPRAR</button> 
             </div>          
         </div> 
+        {comprar && <div className="authContainer checkout">
+            { currentUser ? 
+            <form onSubmit={createOrder}>
+                <p style={{marginBottom:"1rem",fontSize:"0.9rem"}}>
+                   Usuario: {currentUser.email} 
+                </p>
+                <input {...nombreInput} required/>
+                <input {...apellidoInput} required/>
+                <input {...telefonoInput} required/>
+                <button disabled={loading}>{loading ? "CARGANDO" : "REALIZAR COMPRA"}</button>
+            </form> :  
+            <p style={{margin:"1rem 0",fontSize:"0.9rem"}}>
+               <strong><Link to="/login">Iniciá sesión</Link> para poder completar tu compra!</strong>
+            </p>}  
+    </div> }
+         
     </>)
 }
 

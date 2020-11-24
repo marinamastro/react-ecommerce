@@ -8,6 +8,7 @@ import "./css/Footer.css"
 import "./css/ItemCart.css"
 import "./css/Categoria.css"
 import "./css/Auth.css"
+import "./css/CompraExitosa.css"
 import Header from "./components/Header"
 import NavBar from "./components/NavBar"
 import ItemListContainer from "./components/ItemListContainer"
@@ -21,6 +22,8 @@ import Categoria from "./components/Categoria"
 import SignUp from "./components/SignUp"
 import LogIn from "./components/LogIn"
 import ForgotPassword from "./components/ForgotPassword"
+import CompraExitosa from "./components/CompraExitosa"
+
 
 
 function App() {
@@ -53,6 +56,9 @@ function App() {
           <Route path="/forgotpassword" >
             <ForgotPassword/>        
           </Route>
+          <Route path="/compraexitosa/:id" >
+            <CompraExitosa/>        
+          </Route>            
         </Switch>        
       </BrowserRouter>    
     </CartProvider>

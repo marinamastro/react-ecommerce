@@ -31,6 +31,7 @@ function SignUp () {
         setLoadding(true);
         setError("");
         if(passwordInput.value!==passwordConfirmInput.value){
+            setLoadding(false);
             return setError("Las contraseñas no coinciden")
         }
         signup(emailInput.value,passwordConfirmInput.value).then((x)=>{
@@ -38,7 +39,8 @@ function SignUp () {
             history.push("/")
             setError("");            
         })
-        .catch((er)=>{            
+        .catch((er)=>{  
+            setLoadding(false);          
             return manejoErrores(er)})
     }
 

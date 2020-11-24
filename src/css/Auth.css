@@ -59,3 +59,16 @@
       margin-top: 1.4rem;
       color:black
   }
+  .authContainer.checkout{
+    margin: 0 auto;
+    margin-bottom: 4rem;
+    background-color: white;
+    border:2px solid black;
+    width: 80%;   
+  }
+  .authContainer.checkout form{
+      width: 30%;
+  }
+  .authContainer.checkout input{
+      width: 100%;
+  }

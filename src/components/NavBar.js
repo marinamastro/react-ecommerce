@@ -4,9 +4,11 @@ import CartWidget from "./CartWidget"
 import {Link} from "react-router-dom"
 import {useAuth} from "../context/AuthContext"
 import { Dropdown } from 'react-bootstrap';
+import {useCartContext} from "../context/CartContext"
 
 function NavBar (){  
     const {currentUser,logout} = useAuth();
+    const {clear} = useCartContext();
 
     function primerLetra () {
        return currentUser.email.charAt(0).toUpperCase()
@@ -42,7 +44,9 @@ function NavBar (){
                 <Dropdown.Menu>
                    <p className="email-dropdown-item">{currentUser.email} </p>                           
                     <Dropdown.Item href="/miPerfil">Mi Perfil</Dropdown.Item>
-                    <p className="dropdown-item "onClick={salir}>Cerrar sesión</p>
+                    <p className="dropdown-item "onClick={()=>{
+                        salir()
+                    }}>Cerrar sesión</p>
                 </Dropdown.Menu>
               </Dropdown>
                    
