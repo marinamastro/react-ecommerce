@@ -41,7 +41,7 @@ function SignUp () {
     }
 
     return (
-        <section className="signContainer">
+        <section className="authContainer">
             <h1>Registrarme</h1>
             <form onSubmit={onSubmit}>
                 <input {...emailInput} required/>

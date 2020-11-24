@@ -1,4 +1,4 @@
-.signContainer{
+.authContainer{
     width: 50%;
     margin: 10% auto;
     background-color: var(--amarillo);
@@ -6,13 +6,13 @@
     justify-content: center;
     flex-flow: row wrap;   
 }
-.signContainer h1{
+.authContainer h1{
     width: 100%;
    margin-left: 1rem;
    margin-top: 1rem;
    font-family: var(--fuente2);
 }
-.signContainer form{
+.authContainer form{
     width: 50%;
     display: flex;
     flex-flow: row wrap;
@@ -21,7 +21,7 @@
     padding: 2rem 0;
 
 }
-.signContainer input {     
+.authContainer input {     
     padding: 0.7rem 0.4rem; 
     margin-bottom: 1rem;
     background-color: transparent;
@@ -29,23 +29,33 @@
     color: black;
     border-bottom: 1px solid black;
 }
-.signContainer button{
-    padding: 1rem 0.2rem;
+.authContainer button{
+    padding: 1rem ;
     margin-top: 0.5rem;
-    width: 245px;
+    width: 70%;
     background-color: transparent;
     border: none;
     font-weight: 600;
     cursor: pointer;
+    font-size: 0.9rem;
     border: 1px solid black;
   }
-  .error{
+  .error,.message{
    color: red;
    font-style: italic;
    font-weight: 600; 
-   font-size: 0.85rem;
+   font-size: 0.9rem;
+   width: 100%;
+   text-align: center;
   }
   .crearC{
+    text-align: center;
     margin-top:1.4rem;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    text-decoration: none;
+    width: 100%;
+  }
+  .message{
+      margin-top: 1.4rem;
+      color:black
   }

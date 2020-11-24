@@ -20,6 +20,7 @@ import {AuthProvider} from "./context/AuthContext"
 import Categoria from "./components/Categoria"
 import SignUp from "./components/SignUp"
 import LogIn from "./components/LogIn"
+import ForgotPassword from "./components/ForgotPassword"
 
 
 function App() {
@@ -48,6 +49,9 @@ function App() {
           </Route>
           <Route path="/login" >
             <LogIn/>        
+          </Route>
+          <Route path="/forgotpassword" >
+            <ForgotPassword/>        
           </Route>
         </Switch>        
       </BrowserRouter>    
