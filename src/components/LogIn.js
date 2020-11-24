@@ -5,7 +5,7 @@ import {Link,useHistory} from "react-router-dom"
 
 function LogIn () {
     const {login} = useAuth();
-    const emailInput = useInput({defaultValue: "", extras: { placeholder: "Email",type:"email",autoComplete:"on" }});
+    const emailInput = useInput({defaultValue: "", extras: { placeholder: "Email",type:"email"}});
     const passwordInput = useInput({defaultValue: "",extras: { placeholder: "Contraseña",type:"password" }});    
     const [error,setError] = useState("")
     const [loadding,setLoadding] = useState(false)
@@ -27,16 +27,18 @@ function LogIn () {
 
     function onSubmit (e){
         e.preventDefault();  
-        setError("")     
-        login(emailInput.value,passwordInput.value).then((x)=>{
-            setLoadding(true);
-            setError("");
-            history.push("/")            
+        setError("");  
+        setLoadding(true);         
+        login(emailInput.value,passwordInput.value).then((x)=>{                    
+            history.push("/");
+            setError(""); 
+            setLoadding(false)           
         })
         .catch((er)=>{  
             console.log(er)          
             return manejoErrores(er);           
         })
+       
     }
 
     return (
@@ -46,7 +48,7 @@ function LogIn () {
                 <input {...emailInput} required/>
                 <input {...passwordInput} required/>                
                 {error&&<p className="error">{error}</p>}
-                <button type="submit" disabled={loadding} >INICIAR SESIÓN</button>
+                <button type="submit" disabled={loadding} >{ loadding ? "INICIANDO" : "INICIAR SESIÓN"}</button>
                 <p className="crearC">No tenes una cuenta? <Link to="/signup">Registrate</Link></p>
                 <p className="crearC"><Link to="/forgotpassword">Olvidé mi contraseña</Link></p>
             </form>          

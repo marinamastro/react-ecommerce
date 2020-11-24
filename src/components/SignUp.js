@@ -28,12 +28,13 @@ function SignUp () {
 
     function onSubmit (e){
         e.preventDefault();
-        setError("")
+        setLoadding(true);
+        setError("");
         if(passwordInput.value!==passwordConfirmInput.value){
             return setError("Las contraseñas no coinciden")
         }
         signup(emailInput.value,passwordConfirmInput.value).then((x)=>{
-            setLoadding(true);
+            setLoadding(false);
             history.push("/")
             setError("");            
         })
@@ -49,7 +50,7 @@ function SignUp () {
                 <input {...passwordInput} required/>
                 <input {...passwordConfirmInput} required/>
                 {error&&<p className="error">{error}</p>}
-                <button type="submit" disabled={loadding} >REGISTRARME E INICIAR SESIÓN</button>
+                <button type="submit" disabled={loadding} >{loadding ?"CARGANDO" :"REGISTRARME E INICIAR SESIÓN"}</button>
                 <p className="crearC">Ya tenés una cuenta? <Link to="/login">Ingresá</Link></p>
             </form>           
         </section>

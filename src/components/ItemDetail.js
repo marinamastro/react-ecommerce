@@ -13,8 +13,7 @@ function ItemDetail ({producto}) {
     }
 
     function crearParrafos (description) {
-        const parrafos = description.split(".");        
-        return parrafos
+        return description.split(".");      
     }
 
    return !producto ? <Loading/> :  producto&&producto.map(x=>{        
