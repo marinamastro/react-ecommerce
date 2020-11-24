@@ -17,7 +17,8 @@ function LogIn () {
                 setError("Usuario inexistente")
                 break;
             case "auth/wrong-password":
-                setError("Contraseña incorrecta")
+                setError("Contraseña incorrecta");
+                break;
             default:
                 setError(error.message)
                 break;
@@ -25,13 +26,15 @@ function LogIn () {
     }
 
     function onSubmit (e){
-        e.preventDefault();       
+        e.preventDefault();  
+        setError("")     
         login(emailInput.value,passwordInput.value).then((x)=>{
             setLoadding(true);
             setError("");
             history.push("/")            
         })
-        .catch((er)=>{            
+        .catch((er)=>{  
+            console.log(er)          
             return manejoErrores(er);           
         })
     }

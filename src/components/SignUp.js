@@ -28,6 +28,7 @@ function SignUp () {
 
     function onSubmit (e){
         e.preventDefault();
+        setError("")
         if(passwordInput.value!==passwordConfirmInput.value){
             return setError("Las contraseñas no coinciden")
         }
