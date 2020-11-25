@@ -33,7 +33,8 @@ function CartContainer () {
                 },
             items:cart.map(x=>({id:x.item.id,title:x.item.title,price:x.item.price,cantidad:x.cantidad})),
             total:total,
-            date: firebase.firestore.FieldValue.serverTimestamp()
+            date: firebase.firestore.FieldValue.serverTimestamp(),
+            status:"generada"
         }
         const db=getFirestore();
         const orders = db.collection("orders");
