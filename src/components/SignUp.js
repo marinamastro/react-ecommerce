@@ -50,7 +50,8 @@ function SignUp () {
             <form onSubmit={onSubmit}>
                 <input {...emailInput} required/>
                 <input {...passwordInput} required/>
-                <input {...passwordConfirmInput} required/>
+                <p className="required">Mínimo 6 caracteres</p>
+                <input {...passwordConfirmInput} required />
                 {error&&<p className="error">{error}</p>}
                 <button type="submit" disabled={loadding} >{loadding ?"CARGANDO" :"REGISTRARME E INICIAR SESIÓN"}</button>
                 <p className="crearC">Ya tenés una cuenta? <Link to="/login">Ingresá</Link></p>

@@ -32,13 +32,14 @@
 .authContainer button{
     padding: 1rem ;
     margin-top: 0.5rem;
-    width: 70%;
+    width: 55%;
     background-color: transparent;
     border: none;
     font-weight: 600;
     cursor: pointer;
     font-size: 0.9rem;
     border: 1px solid black;
+    margin: auto;
   }
   .error,.message{
    color: red;
@@ -72,3 +73,15 @@
   .authContainer.checkout input{
       width: 100%;
   }
+
+  .required{    
+    width: 184px;
+    font-size: 0.8rem;
+    margin-top: -10px;
+    margin-bottom: 0.6rem;
+  }
+  .text{
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+  }
+ 

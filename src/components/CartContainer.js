@@ -11,7 +11,8 @@ import "firebase/firestore"
 function CartContainer () {
     const nombreInput = useInput({defaultValue: "", extras: { placeholder: "Nombre",type:"text"}});
     const apellidoInput = useInput({defaultValue: "", extras: { placeholder: "Apellido",type:"text"}});
-    const telefonoInput = useInput({defaultValue: "", extras: { placeholder: "Teléfono",type:"text"}});    
+    const telefonoInput = useInput({defaultValue: "", extras: { placeholder: "Teléfono",type:"text"}}); 
+    const direInput = useInput({defaultValue: "", extras: { placeholder: "Dirección de envio",type:"text"}});    
     const {cart,clear} = useCartContext();
     const [comprar,setComprar] = useState(false);
     const {currentUser} = useAuth();
@@ -25,9 +26,10 @@ function CartContainer () {
         setLoading(true)
         const newOrder = {
             buyer: {nombre:nombreInput.value,
-                    apelido:apellidoInput.value,
+                    apellido:apellidoInput.value,
                     tel:telefonoInput.value,
-                    email:currentUser.email
+                    email:currentUser.email,
+                    direccion:direInput.value
                 },
             items:cart.map(x=>({id:x.item.id,title:x.item.title,price:x.item.price,cantidad:x.cantidad})),
             total:total,
@@ -60,15 +62,16 @@ function CartContainer () {
         {comprar && <div className="authContainer checkout">
             { currentUser ? 
             <form onSubmit={createOrder}>
-                <p style={{marginBottom:"1rem",fontSize:"0.9rem"}}>
-                   Usuario: {currentUser.email} 
+                <p className="text">
+                   Email: {currentUser.email} 
                 </p>
                 <input {...nombreInput} required/>
                 <input {...apellidoInput} required/>
                 <input {...telefonoInput} required/>
+                <input {...direInput} required/>
                 <button disabled={loading}>{loading ? "CARGANDO" : "REALIZAR COMPRA"}</button>
             </form> :  
-            <p style={{margin:"1rem 0",fontSize:"0.9rem"}}>
+            <p className="text">
                <strong><Link to="/login">Iniciá sesión</Link> para poder completar tu compra!</strong>
             </p>}  
     </div> }
