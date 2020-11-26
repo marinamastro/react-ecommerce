@@ -13,7 +13,7 @@ import "./css/MiPerfil.css"
 import Header from "./components/Header"
 import NavBar from "./components/NavBar"
 import ItemListContainer from "./components/ItemListContainer"
-import {BrowserRouter,Switch,Route} from "react-router-dom"
+import {HashRouter,Switch,Route} from "react-router-dom"
 import ItemDetailContainer from './components/ItemDetailContainer'
 import Cart from "./components/Cart"
 import Footer from "./components/Footer"
@@ -32,7 +32,7 @@ function App() {
   return (
   <AuthProvider>
     <CartProvider>
-      <BrowserRouter>    
+      <HashRouter>    
         <NavBar/>    
         <Switch>
           <Route exact path="/">        
@@ -65,7 +65,7 @@ function App() {
             <MiPerfil/>        
           </Route>             
         </Switch>        
-      </BrowserRouter>    
+      </HashRouter>    
     </CartProvider>
   </AuthProvider>
   );
