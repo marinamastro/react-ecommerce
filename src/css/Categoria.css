@@ -4,7 +4,7 @@
     flex-flow:row wrap;
     justify-content:center
 }
-.categoria-container h1{
+.categoria-container h1,.categoria-container h3{
     margin: 2rem 3rem;
     text-transform: uppercase;
     width: 100%;

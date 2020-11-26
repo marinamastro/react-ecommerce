@@ -34,18 +34,19 @@ function CartContainer () {
             items:cart.map(x=>({id:x.item.id,title:x.item.title,price:x.item.price,cantidad:x.cantidad})),
             total:total,
             date: firebase.firestore.FieldValue.serverTimestamp(),
-            status:"generada"
+            status:"generada"            
         }
+
         const db=getFirestore();
         const orders = db.collection("orders");
-        orders.add(newOrder).then((doc)=>{                    
+        orders.add(newOrder)
+        .then((doc)=>{                    
             setLoading(false);
             history.push("/compraexitosa/"+doc.id);
-            setComprar(false)
+            setComprar(false);           
         })
-        .catch(er=>alert("error creando order"))
-    }
-
+        .catch(er=>{console.log(er);alert("error creando order")})
+    }   
 
     return (<>      
         { cart.map(x=> {

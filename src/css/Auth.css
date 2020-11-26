@@ -13,9 +13,9 @@
    font-family: var(--fuente2);
 }
 .authContainer form{
-    width: 50%;
+    width: 55%;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column wrap;
     justify-content: center;
     align-items: center;
     padding: 2rem 0;

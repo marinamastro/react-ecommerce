@@ -43,7 +43,7 @@ function NavBar (){
                 </Dropdown.Toggle>              
                 <Dropdown.Menu>
                    <p className="email-dropdown-item">{currentUser.email} </p>                           
-                    <Dropdown.Item href="/miPerfil">Mi Perfil</Dropdown.Item>
+                    <Dropdown.Item><Link to="miPerfil">Mi Perfil</Link></Dropdown.Item>
                     <p className="dropdown-item" onClick={salir}>Cerrar sesión</p>
                 </Dropdown.Menu>
               </Dropdown>

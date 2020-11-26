@@ -2,13 +2,12 @@ import React , {useState,useEffect} from "react"
 import {getFirestore} from "../firebase"
 import { useParams } from "react-router-dom";
 import {useCartContext} from "../context/CartContext"
+import DetalleOrdenItem from "./DetalleOrdenItem"
 
 function CompraExitosa () {
     const [order,setOrder] = useState();   
     const {id} = useParams();   
-    const {clear} = useCartContext();
-    let total;
-    let costoEnvio= 500;
+    const {clear} = useCartContext();   
 
     useEffect(() => {        
         const db = getFirestore();
@@ -36,27 +35,14 @@ function CompraExitosa () {
         </div>
         <div className="datos">
             {/* creo que esta no es la forma correcta de mostrar los datos */}
+            <p>Fecha: {order.map(x=>x.date.toDate().toString())}</p> 
             <p>Email: {order.map(x=>x.buyer.email)}</p> 
             <p>Nombre: {order.map(x=>x.buyer.nombre)}</p>
             <p>Apellido: {order.map(x=>x.buyer.apellido)}</p>
             <p>Telefono: {order.map(x=>x.buyer.tel)}</p>
             <p>Dirección de envio: {order.map(x=>x.buyer.direccion)}</p>
         </div>
-        <div className="items">
-        {order.map(x=>{
-            total=x.total
-            return x.items}).map(y=>{
-                return y.map(z=>{
-                    return <>
-                    <p>{z.title}  ~  {z.cantidad} unidad(es) ~ ${z.price}</p>                    
-                    <br/>                   
-                    </>})
-            })            
-        }
-            <p>TOTAL COMPRA: $ {total}</p>
-            <p>Costo de envio:  {total>500 ? "gratis" : "$"+costoEnvio}</p>
-            <p><b>TOTAL: $ {(total>500 ? 0 : costoEnvio) + total}</b></p>
-        </div>
+        <DetalleOrdenItem order={order}/>
         <button>PAGAR</button>
     </div>}
     </section>
