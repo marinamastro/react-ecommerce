@@ -10,7 +10,7 @@
 
 ### Flow
 Desde que ingresas al sitio podes navegar por los productos y agregarlos al carrito desde su detalle, la pagina de inicio o desde la ruta de una categoría.
-El carrito es accesible desde cualquier pagina, cuando se hace click en comprar, si estas logeado, aparece un formulario , y al completar tus datos y clickear en Realizar compra te lleva a una ruta con los detalles de tu compra.
+Desde el carrito, cuando se hace click en comprar, si estas logeado, aparece un formulario , y al completar tus datos y clickear en Realizar compra te lleva a una ruta con los detalles de tu compra.
 Si no estas logeado tenes que iniciar sesión. Para iniciar sesión tenes que estar registrado, solo se requiere un mail y contraseña. Si te olvidaste la contraseña al iniciar sesion podes recuperarla
 
 
