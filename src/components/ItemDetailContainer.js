@@ -13,10 +13,11 @@ function ItemDetailContainer () {
         const item = itemCollection.doc(id);
         item.get().then(item=>{
             if(!item.exists){
-                console.log("item no encontrado")
-            }
+                console.log("item no encontrado");
+                setProducto([])
+            }else{
             setProducto([{id:item.id, ...item.data()}])
-        })
+        }})
         .catch(error=>console.log(error))
     }, [id])  
     

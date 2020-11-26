@@ -75,3 +75,8 @@
     margin-top:0.7rem;
     font-weight: 600;
 }
+.not-found{
+  margin-top: 10%;
+  font-family: var(--fuente2);
+  text-align: center;
+}
