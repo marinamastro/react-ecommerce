@@ -26,9 +26,7 @@ import ForgotPassword from "./components/ForgotPassword"
 import CompraExitosa from "./components/CompraExitosa"
 import MiPerfil from "./components/MiPerfil"
 
-
-
-function App() {
+function App() {  
   return (
   <AuthProvider>
     <CartProvider>
@@ -62,7 +60,7 @@ function App() {
             <CompraExitosa/>        
           </Route> 
           <Route path="/miPerfil" >
-            <MiPerfil/>        
+            <MiPerfil/>
           </Route>             
         </Switch>        
       </HashRouter>    

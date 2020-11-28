@@ -44,6 +44,7 @@ function CompraExitosa () {
         </div>
         <DetalleOrdenItem order={order}/>
         <button>PAGAR</button>
+        <p style={{marginTop:"1rem",fontSize:"0.9rem"}}>LAS ÓRDENES TIENEN UNA DURACIÓN DE 7 DÍAS</p>
     </div>}
     </section>
 }

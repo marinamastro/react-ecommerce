@@ -33,8 +33,10 @@ function CartContainer () {
                 },
             items:cart.map(x=>({id:x.item.id,title:x.item.title,price:x.item.price,cantidad:x.cantidad})),
             total:total,
+            envio:total>500 ? 0 : 500,
             date: firebase.firestore.FieldValue.serverTimestamp(),
-            status:"generada"            
+            status:"generada",
+            email:currentUser.email //para usar el where ya que no puedo hacer where buyer.email
         }
 
         const db=getFirestore();

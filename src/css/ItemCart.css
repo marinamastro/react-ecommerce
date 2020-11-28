@@ -33,7 +33,7 @@
 .total{
     background-color: black;
     color: var(--amarillo);
-   
+    margin-bottom: 1rem;
 }
 
 .item-cart.total button{

@@ -1,26 +1,28 @@
 import React from "react"
 
-function DetalleOrdenItem ({order}) {
-    let total;
-    let costoEnvio= 500;
-    
+function DetalleOrdenItem ({order}) {   
+
     return (
         <div className="items">
-            {order.map(x=>{
-                total=x.total
-                return x.items}).map(y=>{
-                    return y.map(z=>{
-                        return <>
-                        <p>
-                        <i>{z.title}</i>  x  {z.cantidad} unidad(es) ~ ${z.price} ~ Total {z.cantidad*z.price}
-                        </p>                    
-                        <br/>                   
-                        </>})
-                })            
-            }
-                <p>TOTAL COMPRA: $ {total}</p>
-                <p>Costo de envio:  {total>500 ? "gratis" : "$"+costoEnvio}</p>
-                <p><b>TOTAL: $ {(total>500 ? 0 : costoEnvio) + total}</b></p>
+           {order.map(x=>{
+               return <div> <p>Fecha: {x.date.toDate().toString()}</p>
+               <p>ID: {x.id}</p>
+               <br></br>
+               <div>{x.items.map(y=>{                  
+                   return <p>
+                       <i>{y.title}</i> ~ 
+                       ${y.price} X {y.cantidad} unidad(es) ~ 
+                       total ${y.price*y.cantidad}
+                       </p>
+                    })}
+               </div>
+               <br></br>
+                <p>TOTAL PRODUCTOS: $ {x.total}</p>
+               <p>Costo de envio: $ {x.envio}</p>
+               <p><b>TOTAL: $ {x.total+x.envio}</b></p>              
+               <hr></hr>
+               <br></br>
+           </div>})}
         </div>
     )}
 

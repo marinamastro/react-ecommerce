@@ -1,6 +1,33 @@
 .categoria-container.miperfil {
    justify-content: left;
+  
 }
 .categoria-container.miperfil h4{
     margin: 0rem 3rem;
+    width: 100%;
+}
+.categoria-container.miperfil div.ordenes{
+    margin: 1rem 3rem;
+    width: 100%;
+}
+.ordenes .items {
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+    width: 80%;
+}
+.categoria-container.miperfil .pendiente-pago{
+    margin:0;
+    margin-bottom: 1rem;
+    background-color: rgb(255, 119, 119);
+    padding: 1rem;
+    width: 75%;
+}
+.categoria-container.miperfil .historial{
+    margin:0;
+    margin-bottom: 1rem;
+    background-color: rgb(255, 119, 119);
+    padding: 1rem;
+    width: 75%;
+    background-color: rgb(246, 255, 119);
 }
