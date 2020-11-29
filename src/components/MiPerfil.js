@@ -6,11 +6,10 @@ import DetalleOrdenItem from "./DetalleOrdenItem"
 function MiPerfil () {
     const {currentUser} = useAuth();
     const [orders,setOrders] = useState();
-
-// si actualizo la pagina se rompe
-
+    
     useEffect(()=>{
-        const db = getFirestore();
+        if(currentUser){
+       const db = getFirestore();
         const orderCollection = db.collection("orders");
         const orders = orderCollection.where("email","==",currentUser.email.toString());
         orders.get().then((orders)=>{
@@ -18,10 +17,10 @@ function MiPerfil () {
                 console.log("no hay ordenes del usuario")              
             }            
         setOrders(orders.docs.map(order=>({id:order.id,...order.data()})))
-        })        
+        })  }      
     },[currentUser])
 
-console.log(orders)
+
     return (
     <section className="categoria-container miperfil">
         <h3>Mi cuenta</h3>
