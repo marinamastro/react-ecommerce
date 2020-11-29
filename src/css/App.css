@@ -29,27 +29,5 @@ body{
 button{
   cursor: pointer;
 }
-/*---------------------------------------MEDIAQUERIES*/
 
-@media (max-width:1066px){
-  .newsletter {
-    width: 50%;
-  }
-  .newsletter form{
-    flex-flow: row wrap;
-  }
-}
 
-@media (max-width:450px){
-  .newsletter{
-    display: none;
-  }
-}
-@media (max-width:496px){
-  nav{
-    justify-content: center;
-  }
-  .shop-about{
-    display: none;
-  }
-}

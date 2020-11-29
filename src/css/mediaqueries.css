@@ -1,0 +1,180 @@
+@media (max-width:1267px){
+    .newsletter {
+      width: 30%;
+    }
+    .newsletter form{
+      flex-flow: row wrap;
+      justify-content: center;
+    }
+  }
+  @media (max-width:690px){
+    .newsletter {
+        display: none;
+    }
+  
+  }
+
+
+  @media (max-width:600px){
+    .categoria-container.miperfil{
+        margin-top: 6rem;
+    }
+    .categoria-container.miperfil div.ordenes {
+        margin: 1rem 0.2rem;
+    }
+    .categoria-container.miperfil .pendiente-pago{
+        width: 100%;
+    }
+    .ordenes .items{
+        width: 100%;
+    }
+    nav{
+      justify-content: space-around;
+
+    }
+    div.categorias{
+       display: none;
+    }
+    div.item{
+        width: 80%;
+    }
+    footer div.container-sup{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .footer-newsletter {        
+        width: 80%;
+        margin-bottom: 4rem;
+    }
+    .contacto{
+        width: 80%;
+        justify-content: center;
+    }
+    .container-inf h4{
+        font-size: 3rem;
+    }
+    .container-inf div div div {
+        display: none;
+    }
+    .detail-container{
+        margin-top: 6rem;
+    }
+    
+    div#iconos{
+        display: none !important
+    }
+    .detail-container #detail-buttons{
+        width: 100% !important;
+    }
+    header #promo{
+        display: none !important
+    }
+    .cart{
+        margin-top: 10rem;
+        font-size: 0.8rem;
+    }
+    .item-cart button{
+     width: 100%;   
+     text-align: right;
+    }
+    .item-cart .total{
+        flex-wrap: wrap;
+    }
+    .item-cart.total button.vaciar{
+        margin-top: 0.5rem;
+        font-size: 0.6rem;
+    }
+    .cart .item-cart.total p{
+        width: 100%;
+        text-align: center;
+    }
+    .item-cart.total button{
+        font-size: 0.8rem;
+    }
+   
+    .cart .item-cart{
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    .cart .item-cart h4{
+        width: 30%;
+        font-size: 0.7rem;
+    }
+    .cart .item-cart img{
+        width: 10% !important;
+        height: 100% !important;
+    }
+    .authContainer{
+        margin-top: 8rem;
+        width:  100%;
+    }
+    .authContainer form{
+        width:  100%;
+    }
+    .authContainer.checkout{
+        width: 100%;
+    }
+    .authContainer.checkout form{
+        width: 100%;
+    }
+    .compra-exitosa{
+        margin-top: 8rem;
+    }
+    .container-detalle{
+        width: 100%;
+        padding: 0;
+    }
+    .container-detalle button{
+        bottom:3rem
+    }
+    .container-detalle > p{
+        margin-top: 3rem !important;
+    }
+    .detalle-compra{
+        flex-wrap: wrap;
+    }
+    .detalle-compra h2{
+        width: 100%;
+    }
+  }
+
+  @media (min-width:600px) and (max-width:900px){
+    div.item{
+        width: 40%;
+    }
+    .cart{
+        margin-top: 8rem;
+        font-size: 0.8rem;
+    }
+   
+  }
+@media (max-width:1210px){
+  
+  .detail-container div div div.item-count {
+    flex-wrap: wrap;
+    justify-content:flex-start;
+    width: 100% !important
+}
+.detail-container div div div.item-count .contador{
+    margin-bottom: 1rem;
+}
+.detail-container div div div.item-count .agregar button{
+    margin-left: 0;
+}
+}
+
+@media (max-width:700px){
+    .detail-container{
+        grid-template-columns: 100% ;
+        grid-template-rows: auto auto;        
+    }
+  .detail-container img{
+      margin-top: 1rem;
+      grid-row: 1;
+  }
+  .detail-container > div{
+      padding: 0 0.5rem;
+      grid-row: 2;
+     
+  }
+}

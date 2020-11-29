@@ -3,7 +3,7 @@ import React from "react"
 function IconosDetail ({styles}){
     const style= {height: "2.33vw", width: "auto",margin:"auto",display:"block"}
 return (
-    <div style={styles}>
+    <div style={styles} id="iconos">
         <div>
             <svg viewBox="0 0 13 20" style={style}>
                 <g>

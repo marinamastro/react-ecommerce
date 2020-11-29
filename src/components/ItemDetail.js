@@ -35,7 +35,7 @@ function ItemDetail ({producto}) {
                                   {x}
                               </p>)}
                           </div>               
-                        <div style={{position:"relative",width:"60%"}}>
+                        <div style={{position:"relative",width:"60%"}} id="detail-buttons">
                           {!cantidad ? <ItemCount stock={x.stock} initial={1} onAdd={onAdd} item={x}/> : 
                           <div className="agregar">
                               <Link to="/cart"><button style={{marginLeft:0}}>Terminar compra</button></Link>
