@@ -26,7 +26,7 @@ function MiPerfil () {
         <h3>Mi cuenta</h3>
         <h4>{currentUser&&currentUser.email}</h4>
         <h3>Mis compras</h3>       
-    {orders&&
+    {orders&&orders.length!==0&&
         <div className="ordenes">
             <h4 className="pendiente-pago">PENDIENTES DE PAGO</h4>
             <DetalleOrdenItem order={orders.filter(x=>x.status==="generada")}/>       
