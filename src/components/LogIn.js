@@ -43,17 +43,19 @@ function LogIn () {
     }
 
     return (
-        <section className="authContainer">
-            <h1>Ingresar</h1>
-            <form onSubmit={onSubmit}>
-                <input {...emailInput} required/>
-                <input {...passwordInput} required/>                
-                {error&&<p className="error">{error}</p>}
-                <button type="submit" disabled={loadding} >{ loadding ? "INICIANDO" : "INICIAR SESIÓN"}</button>
-                <p className="crearC">No tenes una cuenta? <Link to="/signup">Registrate</Link></p>
-                <p className="crearC"><Link to="/forgotpassword">Olvidé mi contraseña</Link></p>
-            </form>          
-        </section>
+        <div className="login-c">
+            <section className="authContainer">
+                <h1>Ingresar</h1>
+                <form onSubmit={onSubmit}>
+                    <input {...emailInput} required/>
+                    <input {...passwordInput} required/>                
+                    {error&&<p className="error">{error}</p>}
+                    <button type="submit" disabled={loadding} >{ loadding ? "INICIANDO" : "INICIAR SESIÓN"}</button>
+                    <p className="crearC">No tenes una cuenta? <Link to="/signup">Registrate</Link></p>
+                    <p className="crearC"><Link to="/forgotpassword">Olvidé mi contraseña</Link></p>
+                </form>          
+            </section>
+        </div>
     )
 }
 
