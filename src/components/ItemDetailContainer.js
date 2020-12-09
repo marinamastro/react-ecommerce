@@ -14,9 +14,9 @@ function ItemDetailContainer () {
         item.get().then(item=>{
             if(!item.exists){
                 console.log("item no encontrado");
-                setProducto([])
+                setProducto({})
             }else{
-            setProducto([{id:item.id, ...item.data()}])
+            setProducto({id:item.id, ...item.data()})
         }})
         .catch(error=>console.log(error))
     }, [id])  

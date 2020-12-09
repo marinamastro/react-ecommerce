@@ -19,7 +19,7 @@ export default function CartProvider ({children}) {
     } 
 
     function removeItem(id){
-        setCart([...cart.filter(x=>x.item.id!==id)])        
+        setCart(cart.filter(x=>x.item.id!==id))        
     }
 
     function clear(){
