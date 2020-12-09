@@ -178,3 +178,20 @@
      
   }
 }
+@media (max-width:384px){
+    nav{
+        flex-wrap: nowrap;
+        padding: 0.8rem 0;
+    }
+    nav a .marca{
+        font-size: 1.2rem;
+    }
+    .icon{
+        background-color: transparent;
+        color: black;
+    }
+    nav span.icon{
+        margin-right: 0 !important;
+    }
+  
+}
