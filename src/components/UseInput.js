@@ -6,7 +6,7 @@ export default function useInput({ defaultValue, extras }) {
   function onChange(evt) {
     setInput(evt.target.value);
   }
-  // Input <input onChange={onChange}
+
   return {    
     value: input,
     onChange,

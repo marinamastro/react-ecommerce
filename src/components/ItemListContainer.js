@@ -16,6 +16,9 @@ function ItemListContainer ({titulo}){
             setProductos(snapshot.docs.map(doc =>({id:doc.id, ...doc.data()})))
         })
         .catch(error=>console.log(error))
+        return ()=>{
+            setProductos()
+        }
     }, [])  
 
     return (

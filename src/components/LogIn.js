@@ -29,10 +29,11 @@ function LogIn () {
         e.preventDefault();  
         setError("");  
         setLoadding(true);         
-        login(emailInput.value,passwordInput.value).then((x)=>{                    
-            history.push("/");
+        login(emailInput.value,passwordInput.value).then((x)=>{   
             setError(""); 
-            setLoadding(false)           
+            setLoadding(false)                   
+            history.push("/");
+                    
         })
         .catch((er)=>{  
             console.log(er)          
