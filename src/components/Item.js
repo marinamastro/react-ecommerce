@@ -4,7 +4,7 @@ import {useCartContext} from "../context/CartContext"
 
 function Item ({producto}) {
     const {cart,addItem} = useCartContext();
-
+    console.log("render item")
     function isInCart(producto){       
         return cart.find(x=>x.item.id===producto.id)  
     }
