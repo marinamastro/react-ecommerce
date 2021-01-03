@@ -44,8 +44,9 @@ function CartContainer () {
         orders.add(newOrder)
         .then((doc)=>{                    
             setLoading(false);
+            setComprar(false);   
             history.push("/compraexitosa/"+doc.id);
-            setComprar(false);           
+                   
         })
         .catch(er=>{console.log(er);alert("error creando order")})
     }   
