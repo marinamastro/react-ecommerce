@@ -1,5 +1,5 @@
-## Ecommerce realizado con el curso React js de Coderhouse! 
-## Miralo acá -> https://superfluid-react-ecommerce.netlify.app/
+## Fake Ecommerce created with React js during Coderhouse course! 
+## Check it out here -> https://superfluid-react-ecommerce.netlify.app/
 
 ### Tecnologías utilizadas
 
